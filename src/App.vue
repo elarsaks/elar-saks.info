@@ -1,5 +1,7 @@
 <template>
   <div id="app" :style="style" >
+    <Menu :open="open" :openSlogan="openSlogan" />
+    <Desktop :open="open" />
     <Slogan
       v-hammer:swipe.up="onSwipeUp"
      :sloganUp="open"
@@ -17,9 +19,10 @@
 </template>
 
 <script>
-import Slogan from './components/Slogan.vue'
+import Desktop from './components/Desktop.vue'
+import Menu from './components/Menu.vue'
 import Section from './components/Section.vue'
-
+import Slogan from './components/Slogan.vue'
 
 let degree = 1;
 let saturation = 100;
@@ -28,12 +31,16 @@ let luminosity = 20;
 export default {
   name: 'app',
   components: {
-    Slogan,
+    Desktop,
+    Menu,
     Section,
+    Slogan,
   },
   data() {
     return {
       open: false,
+      windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth,
       sectionContent: '',
       style:{
         backgroundColor: '',
@@ -65,20 +72,36 @@ export default {
     },
     openSlogan(){
       this.open = !this.open
+    },
+    onResize() {
+      this.windowHeight = window.innerHeight
+          console.log(this.windowHeight)
     }
   },
   created() {
-    setInterval(this.changeColor, 70);
+    setInterval(this.changeColor, 100);
   },
+  mounted() { 
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize);
+    })
+  }
 }
 </script>
 
 <style>
+
+body {
+  margin: 0;
+  overflow: hidden;
+  min-height: 100vh;
+  font-family: Roboto;
+}
+
 #app {
   overflow: hidden;
   min-height: 100vh;
   font-family: Roboto;
-  padding-bottom: 5vh;
 }
 
 #wrapper {
@@ -102,7 +125,12 @@ export default {
   #wrapper {
     width: 70vw;
   }
+}
 
+@media (min-width:1023px){
+  #wrapper {
+    display: none;
+  }
 }
 
 
