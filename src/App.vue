@@ -1,17 +1,25 @@
 <template>
-  <div id="app" :style="style" >
+  <div 
+    id="app" 
+    :style="style">
     <Slogan
       v-hammer:swipe.up="onSwipeUp"
      :sloganUp="open"
      :openSlogan="openSlogan"
      />
     <Menu 
-    :open="open"
-    :openSlogan="openSlogan"
-    @changecontent="select"
+      :open="open"
+      v-if="windowWidth >= 1023"
+      :openSlogan="openSlogan"
+      @changecontent="select"
     />
-    <Desktop :open="open" :sectionContent="sectionContent" select="select"/>
-    <div id="wrapper" v-if="open">
+    <Desktop
+      :open="open"
+      v-if="windowWidth >= 1023"
+      :sectionContent="sectionContent"
+      select="select"
+    />
+    <div id="wrapper" v-if="open && windowWidth < 1023">
       <Section :select="select" :header="'About'" class="rounded-corners-up" :sectionContent="sectionContent"  />
       <Section :select="select" :header="'Projects'" :sectionContent="sectionContent" />
       <Section :select="select" :header="'Education'" :sectionContent="sectionContent"/>
