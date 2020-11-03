@@ -5,12 +5,12 @@
     </div>
 
     <div class="menu-items">
-      <h4 class="menu-item">Projects</h4>
-      <h4 class="menu-item">About</h4>
-      <h4 class="menu-item">Education</h4>
-      <h4 class="menu-item">Experience</h4>
-      <h4 class="menu-item">Volunteering</h4>
-      <h4 class="menu-item">Contact</h4>
+      <h4 class="menu-item" @click="$emit('changecontent', 'About')">About</h4>
+      <h4 class="menu-item" @click="$emit('changecontent', 'Projects')">Projects</h4>
+      <h4 class="menu-item" @click="$emit('changecontent', 'Experience')">Experience</h4>
+      <h4 class="menu-item" @click="$emit('changecontent', 'Education')">Education</h4>
+      <h4 class="menu-item" @click="$emit('changecontent', 'Volunteering')">Volunteering</h4>
+      <h4 class="menu-item" @click="$emit('changecontent', 'Contact')">Contact</h4>
     </div>
   </div>
   
@@ -18,7 +18,10 @@
 
 <script>
   export default{
-    props: ['open', 'openSlogan'],
+    props: ['open', 'openSlogan', 'select'],
+    componentDidMount() {
+      this.$emit('changecontent', 'About')
+    }
   }
 </script>
 
@@ -67,5 +70,6 @@
 
 .menu-items :hover {
   cursor: pointer;
+  font-weight: 400;
 }
 </style>

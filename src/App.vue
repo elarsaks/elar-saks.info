@@ -1,12 +1,16 @@
 <template>
   <div id="app" :style="style" >
-    <Menu :open="open" :openSlogan="openSlogan" />
-    <Desktop :open="open" />
     <Slogan
       v-hammer:swipe.up="onSwipeUp"
      :sloganUp="open"
      :openSlogan="openSlogan"
      />
+    <Menu 
+    :open="open"
+    :openSlogan="openSlogan"
+    @changecontent="select"
+    />
+    <Desktop :open="open" :sectionContent="sectionContent" select="select"/>
     <div id="wrapper" v-if="open">
       <Section :select="select" :header="'About'" class="rounded-corners-up" :sectionContent="sectionContent"  />
       <Section :select="select" :header="'Projects'" :sectionContent="sectionContent" />
@@ -75,7 +79,6 @@ export default {
     },
     onResize() {
       this.windowHeight = window.innerHeight
-          console.log(this.windowHeight)
     }
   },
   created() {
