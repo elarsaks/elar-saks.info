@@ -58,7 +58,7 @@ export default {
 }
 
 .content {
-  padding-left: 1vw;
+  padding-left: 2vw;
   padding-right: 1vw;
   font-size: 4vw;
 }
