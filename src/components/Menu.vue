@@ -5,12 +5,12 @@
     </div>
 
     <div class="menu-items">
-      <h4 class="menu-item" @click="$emit('changecontent', 'About')">About</h4>
-      <h4 class="menu-item" @click="$emit('changecontent', 'Projects')">Projects</h4>
-      <h4 class="menu-item" @click="$emit('changecontent', 'Experience')">Experience</h4>
-      <h4 class="menu-item" @click="$emit('changecontent', 'Education')">Education</h4>
-      <h4 class="menu-item" @click="$emit('changecontent', 'Volunteering')">Volunteering</h4>
-      <h4 class="menu-item" @click="$emit('changecontent', 'Contact')">Contact</h4>
+      <h4 class="menu-item" @click="$emit('changecontent', 'about')">About</h4>
+      <h4 class="menu-item" @click="$emit('changecontent', 'projects')">Projects</h4>
+      <h4 class="menu-item" @click="$emit('changecontent', 'experience')">Experience</h4>
+      <h4 class="menu-item" @click="$emit('changecontent', 'education')">Education</h4>
+      <h4 class="menu-item" @click="$emit('changecontent', 'volunteering')">Volunteering</h4>
+      <h4 class="menu-item" @click="$emit('changecontent', 'contact')">Contact</h4>
     </div>
   </div>
   

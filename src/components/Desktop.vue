@@ -1,30 +1,29 @@
 <template>
   <div :class="[ open ? 'desktop-wrapper' : 'desktop-wrapper-hidden' ]">
     <h1 class="section-header">
-      {{sectionContent}}
+      {{content.header}}
       <img src="./../assets/down.png" />
     </h1>
-    <component :is="sectionContent"></component>
+    <ExpElement 
+      v-for="exp in content.content" v-bind:key="exp.facility" 
+      :exp="exp" 
+    />
   </div>
 </template>
 
 <script>
-import About from './About.vue'
-import Education from './Education.vue'
-import Experience from './Experience.vue'
-import Projects from './Projects.vue'
-import Volunteering from './Volunteering.vue'
-import Contact from './Contact.vue'
+import ExpElement from './ExpElement.vue'
 
 export default{
-  props: ['open', 'sectionContent',],
+  props: ['content', 'open',],
     components: {
-      Education,
-      Experience,
-      Projects,
-      About,
-      Volunteering,
-      Contact
+      ExpElement,
+    },
+    data(){
+      return{
+        murupuru: "http://www.murupuru.com",
+        lauttasaarenSiivous: "http://www.lauttasaarensiivous.fi",
+      }
     },
 }
 </script>

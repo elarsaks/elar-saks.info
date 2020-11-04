@@ -1,5 +1,8 @@
 <template>
   <div class="content experience">
+
+    <ExpElement v-for="exp in experiences" v-bind:key="exp.facility" :exp="exp" />
+
     <h3>Edita Publishing </h3>
     <h4>Software Developer Trainee</h4>
     <h4>01/2020 – 06/2020</h4>
@@ -22,9 +25,28 @@
 </template>
 
 <script>
+import ExpElement from './ExpElement.vue'
+
   export default{
+    components: {
+      ExpElement
+    },
     data(){
       return{
+        experiences: [
+          {
+          facility: 'Test1',
+          date: "89844",
+          paragraphs: ['adsaf', 'dsfdf'],
+          list: ['bullet 1', 'nullet 2']
+          },
+          {
+          facility: 'Test2',
+          date: "89844",
+          paragraphs: ['adsaf', 'dsfdf'],
+          list: ['bullet 1', 'nullet 2']
+          },
+        ],
         murupuru: "http://www.murupuru.com",
         lauttasaarenSiivous: "http://www.lauttasaarensiivous.fi",
       }

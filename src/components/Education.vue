@@ -3,7 +3,7 @@
     <h3>Haaga-Helia </h3>
     <h4>Bachelor’s in Business Information Technology</h4>
     <h4>08/2015 – 01/2019</h4>
-    <p> Studying Business Information Technology, with a focus on software development. </p>
+    <p> Studied Business Information Technology, with a focus on software development. </p>
     <h4 class="cursor" @click="haagaShow = !haagaShow, hangShow=false" > Relevant Courses: </h4>
 
 
@@ -12,7 +12,6 @@
         <li v-for="item in haaga" :key="item" >{{item}}</li>
       </ul>
     </transition>
-    <br />
 
     <h3>Hang Seng Management College</h3>
     <h4> Exchange student</h4>
@@ -25,7 +24,6 @@
         <li v-for="item in hang" :key="item" >{{item}}</li>
       </ul>
     </transition>
-    <br />
 
     <h3>Helsinki Business College</h3>
     <h4>Associate Degree in Business Administration, Sales and Marketing</h4>
@@ -39,6 +37,7 @@
 
 <script>
 export default{
+  props: ['color'],
   data(){
     return{
       haagaShow: false,
@@ -53,7 +52,7 @@ export default{
 </script>
 
 
-<style>
+<style scoped>
 
 .education h3 {
   padding: 0;
@@ -113,7 +112,31 @@ export default{
    max-height: 0;
 }
 
+@media (min-width:1023px){
+  .education h3 {
+    font-size: 3vh;
+    padding-top: 3vh;
+  }
 
+  .education h4 {
+    font-size: 3vh;
+    font-weight: 400;
+  }
+
+  .education p {
+    font-size: 3vh;
+  }
+
+  .child {
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+  }
+
+  .education li {
+    font-size: 3vh;
+  }
+
+}
 
 
 </style>

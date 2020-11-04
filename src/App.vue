@@ -16,21 +16,23 @@
     <Desktop
       :open="open"
       v-if="windowWidth >= 1023"
-      :sectionContent="sectionContent"
+      :content="content[sectionContent]"
       select="select"
     />
     <div id="wrapper" v-if="open && windowWidth < 1023">
-      <Section :select="select" :header="'About'" class="rounded-corners-up" :sectionContent="sectionContent"  />
-      <Section :select="select" :header="'Projects'" :sectionContent="sectionContent" />
-      <Section :select="select" :header="'Education'" :sectionContent="sectionContent"/>
-      <Section :select="select" :header="'Experience'" :sectionContent="sectionContent" />
-      <Section :select="select" :header="'Volunteering'" :sectionContent="sectionContent"/>
-      <Section :select="select" :header="'Contact'" class="rounded-corners-down" :sectionContent="sectionContent"/>
+      <Section 
+        v-for="item in content" v-bind:key="item.header"
+        :item="item"
+        :header="item.header"
+        :select="select"
+        :selected="sectionContent == item.header"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import content from './content.json'
 import Desktop from './components/Desktop.vue'
 import Menu from './components/Menu.vue'
 import Section from './components/Section.vue'
@@ -50,6 +52,7 @@ export default {
   },
   data() {
     return {
+      content: content,
       open: false,
       windowHeight: window.innerHeight,
       windowWidth: window.innerWidth,
@@ -64,11 +67,8 @@ export default {
       this.open = !this.open
     },
     select(header) {
-      if(this.sectionContent == undefined || this.sectionContent != header){
-        this.sectionContent = header;
-      } else {
-        this.sectionContent = undefined;
-      }
+      console.log(header, this.sectionContent)
+      this.sectionContent = this.sectionContent == header ? false : header
     },
     getColor() {
       if(degree > 359){
@@ -91,6 +91,7 @@ export default {
   },
   created() {
     setInterval(this.changeColor, 100);
+    this.sectionContent = 'about'
   },
   mounted() { 
     this.$nextTick(() => {

@@ -1,34 +1,28 @@
 <template>
   <div class="section" >
-    <h1 class="section-header" @click="select(header)">
-      {{header}}
+    <h1 class="section-header" @click="select(item.header)">
+      {{item.header}}
       <img src="./../assets/down.png" />
     </h1>
     <transition name="" >
-      <div v-if="sectionContent == header">
-        <component :is="sectionContent"></component>
+      <div v-if="selected">
+        <component :is="'Mobile'" :content="item.content" ></component>
       </div>
     </transition>
   </div>
 </template>
 
 <script>
-import About from './About.vue'
-import Education from './Education.vue'
-import Experience from './Experience.vue'
-import Projects from './Projects.vue'
-import Volunteering from './Volunteering.vue'
-import Contact from './Contact.vue'
+import Mobile from './Mobile.vue'
+
 
 export default {
-  props: ['header', 'sectionContent', 'select'],
+  props: ["item", 'select', 'selected'],
   components: {
-    Education,
-    Experience,
-    Projects,
-    About,
-    Volunteering,
-    Contact
+    Mobile,
+  },
+  created(){
+    console.log(this.item)
   }
 }
 
@@ -58,7 +52,7 @@ export default {
 }
 
 .content {
-  padding-left: 2vw;
+  padding-left: 1vw;
   padding-right: 1vw;
   font-size: 4vw;
 }
