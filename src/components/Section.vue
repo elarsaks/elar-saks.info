@@ -5,9 +5,10 @@
       <img src="./../assets/down.png" />
     </h1>
     <transition name="" >
-      <div v-if="selected">
-        <component :is="'Mobile'" :content="item.content" ></component>
-      </div>
+        <Mobile 
+          v-if="item.header == selected"
+          :content="item.content"
+        /> 
     </transition>
   </div>
 </template>
@@ -21,9 +22,6 @@ export default {
   components: {
     Mobile,
   },
-  created(){
-    console.log(this.item)
-  }
 }
 
 </script>
@@ -61,9 +59,5 @@ export default {
   font-weight: 200;
 }
 
-
-@media (min-width:600px){
-
-}
 
 </style>

@@ -1,0 +1,93 @@
+{
+    "about":{
+      "header":"About",
+      "content":[
+        {
+          "facility":"Welcome to my page!",
+          "paragraphs":[
+            "I started writing code in 2015, while still doing my degree in Business Administration in Helsinki Business College. I started bymodifying web page templates and I just got fascinated about design.",
+            "My interest in digital media took me into Haaga-Helia to study Business Information Technology. Although I started, lovingdesign and aesthetics, the more code I wrote, the more addicted I got to the problem-solving aspect of it. I startedHaaga-Helia, wanting to be a web designer, and ended it wanting to be a full stack developer.",
+            "Now that I have my first half a year of industry experience under my belt, I would love to master my skills as a full stackdeveloper, to move towards new challenges in cloud services or in data analytics."
+          ]
+        }
+      ]
+     },
+    "education":{
+        "header":"Education",
+        "content":[
+          {
+            "facility":"Haaga-helia",
+            "position":"Bachelor’s in Business Information Technology",
+            "date":"08/2015 – 01/2019",
+            "paragraphs":[
+              "Studied Business Information Technology, with a focus on software development. "
+            ],
+            "list":[
+              "Multidisciplinary Software Project (React, Node JS, PostgreSQL)",
+              "Software Development Methods",
+              "Data Management and Databases (SQL and Database design)",
+              "Mobile Programming (PhoneGap)",
+              "Server Programming (Java Spring)",
+              "Front End Development (Html, CSS, JavaScript)",
+              "Programming (Java)",
+              "Software Project (Angular JS, Bootstrap)",
+              "Python programming"
+            ]
+          },
+          {
+            "facility":"Hang Seng Management College",
+            "position":"Exchange student",
+            "date":"01/​2018 – 06/2018",
+            "list":[
+              "System Analysis and Design",
+              "SQLite and Database Design Data Analytics (SAS)",
+              "Digital Marketing"
+            ]
+          }
+        ]
+      },
+    "experience":{
+        "header":"Experience",
+        "content":[
+          {
+            "facility":"MuruPuru OY",
+            "position":"Owner / Freelance Web Developer",
+            "date":"01/2017 – Present",
+            "paragraphs":[
+              "Murupuru OY is a side project to fund my studies and hobby projects. Although most of its revenue has come from construction, it has also provided me with the opportunity to build out 2 websites that are up still today: www.murupuru.com and www.lauttasaarensiivous.fi . "
+            ]
+          },
+          {
+            "facility":"Edita Publishing",
+            "position":"Software Developer Trainee",
+            "date":"01/2020 – 06/2020",
+            "list":[
+              "Worked as a member of an agile development team, participated in daily-, sprint- and monthly meetings.",
+              "Built user interfaces and REST API-s, based on senior team members specifications.",
+              "Technical tools used daily: JavaScript (Vue, Node), PostgreSQL, Docker, Linux, Github, Slack, Jira and etc."
+            ]
+          }
+        ]
+      },
+      "volunteering":{
+        "header":"volunteering",
+        "content":[
+          {
+            "facility":"Slush",
+            "position":"Customer Service",
+            "date":"2017",
+            "paragraphs":[
+              "Volunteered as a custmoer service staff in during the event."
+            ]
+          },
+          {
+            "facility":"European Innovation Academy",
+            "position":"COO Assistant",
+            "date":"06/2014 and 06/2015",
+            "paragraphs":[
+              "Assisted COO in day-to-day operations during the summer school for start-ups, in Nice, France."
+            ]
+          }
+        ]
+      }
+}

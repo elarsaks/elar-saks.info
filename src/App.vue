@@ -25,7 +25,7 @@
         :item="item"
         :header="item.header"
         :select="select"
-        :selected="sectionContent == item.header"
+        :selected="sectionContent"
       />
     </div>
   </div>
@@ -105,9 +105,9 @@ export default {
 
 body {
   margin: 0;
-  overflow: hidden;
   min-height: 100vh;
   font-family: Roboto;
+  padding-bottom: 10vh;
 }
 
 #app {
