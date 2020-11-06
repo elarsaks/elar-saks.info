@@ -7,6 +7,7 @@
      :sloganUp="open"
      :openSlogan="openSlogan"
      />
+    
     <Menu 
       :open="open"
       v-if="windowWidth >= 1023"
@@ -14,10 +15,10 @@
       @changecontent="select"
     />
     <Desktop
+      :section="this.sectionContent"
       :open="open"
-      v-if="windowWidth >= 1023"
       :content="content[sectionContent]"
-      select="select"
+      v-if="windowWidth >= 1023"
     />
     <div id="mobile" v-if="open && windowWidth < 1023" >
       <Section 
@@ -67,7 +68,7 @@ export default {
       this.open = !this.open
     },
     select(header) {
-      console.log(header, this.sectionContent)
+      //console.log(header, this.sectionContent)
       if (this.windowWidth < 1023){
         this.sectionContent = this.sectionContent == header ? false : header
       } else {

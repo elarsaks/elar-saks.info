@@ -1,15 +1,16 @@
 <template>
-  <div class="content">
+  <div class="content" v-bind:class="{ about: about }">
     <h3 v-if="exp.facility"> {{ exp.facility }} </h3>
     <h4 v-if="exp.position"> {{ exp.position }} </h4>
-    <h4 v-if="exp.date"> {{ exp.date }} </h4>
-    <p v-for="paragraph in exp.paragraphs" v-bind:key="paragraph">{{paragraph}}</p>
+    <h4 class="date" v-if="exp.date"> {{ exp.date }} </h4>
 
-    <ul v-if="exp.list && section == 'experience'">
+    <p v-for="paragraph in exp.paragraphs" v-bind:key="paragraph" >{{paragraph}}</p>
+
+    <ul v-if="exp.list && section != 'education'">
       <li v-for="item in exp.list" v-bind:key="item">{{item}}</li>
     </ul>
 
-  <div class="courses">
+  <div class="courses" v-if="section == 'education' && exp.list">
     <h4 class="cursor" @click="showCourses = !showCourses" > Relevant Courses: </h4>
     <transition name="slide">
       <ul class="child" v-if="showCourses">
@@ -29,7 +30,13 @@
         showCourses: false,
       }
     },
-created(){
+    computed: {
+    about: function () {
+      return this.section != 'about'
+    }
+  },
+  created(){
+    console.log(this.section)
     console.log(this.exp)
     }
   }
@@ -38,33 +45,37 @@ created(){
 
 <style scoped>
 .content {
-  padding-bottom: 5vh;
+  padding-bottom: 3vh;
+  padding-left: 2vw;
 }
 
-.content h3 {
+h3 {
   padding: 0;
   margin: 0;
 }
 
-.content h4 {
+h4 {
   padding: 0;
   margin: 0;
 }
 
-.content ul {
+ul {
   padding-top: 1vh;
   margin: 0;
 }
 
-.content li {
+li {
   padding: 0;
   margin: 0;
 }
 
-.content p{
+p {
   padding: 0;
+  margin-bottom: 1vh;
+}
+
+.about p{
   margin-top: 0;
-  margin-bottom: 2vh;
 }
 
 .courses  h4 {
@@ -82,37 +93,61 @@ created(){
    color: #1a3663;
 }
 
+.date {
+  text-decoration: underline;
+  padding-bottom: 1vh;
+}
+
+.child {
+  padding: 2vh;
+  padding-left: 4vh;
+  margin: 0;
+}
+
 .slide-enter-active {
-   transition: all .3s ease-in;
+   -moz-transition-duration: 0.3s;
+   -webkit-transition-duration: 0.3s;
+   -o-transition-duration: 0.3s;
+   transition-duration: 0.3s;
+   -moz-transition-timing-function: ease-in;
+   -webkit-transition-timing-function: ease-in;
+   -o-transition-timing-function: ease-in;
+   transition-timing-function: ease-in;
 }
 
 .slide-leave-active {
-   transition: all .3s ease-in;
+   -moz-transition-duration: 0.3s;
+   -webkit-transition-duration: 0.3s;
+   -o-transition-duration: 0.3s;
+   transition-duration: 0.3s;
+   -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+   -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+   -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
+.slide-enter-to, .slide-leave {
+   max-height: 100px;
+   overflow: hidden;
 }
 
 @media (min-width:1023px){
-  .content h3 {
+  h3 {
     font-size: 3vh;
     padding-top: 3vh;
   }
 
-  .content h4 {
+  h4 {
     font-size: 3vh;
     font-weight: 400;
   }
 
-  .content li {
-    font-size: 3vh;
+  li {
+    font-size: 2.8vh;
   }
 
-  .content p {
-    font-size: 3vh;
+  p {
+    font-size: 2.8vh;
   }
 
 }

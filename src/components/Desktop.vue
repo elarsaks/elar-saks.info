@@ -6,7 +6,8 @@
     </h1>
     <ExpElement 
       v-for="exp in content.content" v-bind:key="exp.facility" 
-      :exp="exp" 
+      :exp="exp"
+      :section="section"
     />
   </div>
 </template>
@@ -25,6 +26,11 @@ export default{
         lauttasaarenSiivous: "http://www.lauttasaarensiivous.fi",
       }
     },
+    computed: {
+    section: function () {
+      return this.content.header.toLowerCase()
+    }
+  }
 }
 </script>
 

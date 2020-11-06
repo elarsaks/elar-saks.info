@@ -29,7 +29,7 @@
         "header":"Education",
         "content":[
           {
-            "facility":"Haaga-helia",
+            "facility":"Haaga-Helia",
             "position":"Bachelor’s in Business Information Technology",
             "date":"08/2015 – 01/2019",
             "paragraphs":[
@@ -51,10 +51,21 @@
             "facility":"Hang Seng Management College",
             "position":"Exchange student",
             "date":"01/​2018 – 06/2018",
+            "paragraphs":[
+              "Spent half a year as an exchange student in Hong Kong, China."
+            ],
             "list":[
               "System Analysis and Design",
               "SQLite and Database Design Data Analytics (SAS)",
               "Digital Marketing"
+            ]
+          },
+          {
+            "facility":"Helsinki Business College",
+            "position":"Associate Degree in Business Administration",
+            "date":"08/​2013 – 06/2015",
+            "paragraphs":[
+              "Learned the fundamentals of International Trade, Marketing Communication Planning and Implementation, BusinessOperations and Customer Relationship Management. Was awarded European Business Baccalaureate Diploma on graduation."
             ]
           }
         ]
@@ -89,7 +100,10 @@
             "facility":"Slush",
             "position":"Customer Service",
             "date":"2017",
-            "paragraphs":[
+            "paragraphs": [
+              "Slush is the world's leading startup and tech event. Slush facilitates meetings between the founders of startups and investors such as venture capitalists, accomplished with events such as matchmaking and pitching competitions."
+            ],
+            "list":[
               "Volunteered as a custmoer service staff in during the event."
             ]
           },
@@ -98,6 +112,9 @@
             "position":"COO Assistant",
             "date":"06/2014 and 06/2015",
             "paragraphs":[
+              "European Innovation Academy is a 3-week accelerator that hosts 500 entrepreneurs, 100 mentors, and 50 professors from 40countries. They work with Stanford, UC Berkeley, Amadeus, Rovio Entertainment, Samsung, Microsoft, Google, the EuropeanUnion, and more."
+            ],
+            "list":[
               "Assisted COO in day-to-day operations during the summer school for start-ups, in Nice, France."
             ]
           }
