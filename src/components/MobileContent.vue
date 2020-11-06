@@ -3,6 +3,7 @@
     <ExpElement 
       v-for="exp in content" v-bind:key="exp.facility" 
       :exp="exp"
+      :section="section"
     />
   </div>
 </template>
@@ -11,7 +12,7 @@
 import ExpElement from './ExpElement.vue'
 
 export default{
-  props: ['content',],
+  props: ['content', 'section'],
     components: {
       ExpElement,
     },

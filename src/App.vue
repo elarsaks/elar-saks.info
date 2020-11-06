@@ -68,7 +68,12 @@ export default {
     },
     select(header) {
       console.log(header, this.sectionContent)
-      this.sectionContent = this.sectionContent == header ? false : header
+      if (this.windowWidth < 1023){
+        this.sectionContent = this.sectionContent == header ? false : header
+      } else {
+        this.sectionContent = header
+      }
+      
     },
     getColor() {
       if(degree > 359){

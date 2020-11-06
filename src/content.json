@@ -12,6 +12,19 @@
         }
       ]
      },
+     "contact":{
+      "header":"Contact",
+      "content":[
+        {
+          "facility":"Welcome to my page!",
+          "paragraphs":[
+            "I started writing code in 2015, while still doing my degree in Business Administration in Helsinki Business College. I started bymodifying web page templates and I just got fascinated about design.",
+            "My interest in digital media took me into Haaga-Helia to study Business Information Technology. Although I started, lovingdesign and aesthetics, the more code I wrote, the more addicted I got to the problem-solving aspect of it. I startedHaaga-Helia, wanting to be a web designer, and ended it wanting to be a full stack developer.",
+            "Now that I have my first half a year of industry experience under my belt, I would love to master my skills as a full stackdeveloper, to move towards new challenges in cloud services or in data analytics."
+          ]
+        }
+      ]
+     },
     "education":{
         "header":"Education",
         "content":[

@@ -11,6 +11,7 @@
         <MobileContent
           v-if="item.header == selected"
           :content="item.content"
+          :section="index"
         /> 
     </transition>
   </div>
