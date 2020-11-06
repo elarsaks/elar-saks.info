@@ -1,11 +1,14 @@
 <template>
-  <div class="section" >
+  <div 
+    class="section" 
+    :class="{ 'rounded-corners-up' : index === 'about', 'rounded-corners-down' : index === 'volunteering' }"
+  >
     <h1 class="section-header" @click="select(item.header)">
       {{item.header}}
       <img src="./../assets/down.png" />
     </h1>
     <transition name="" >
-        <Mobile 
+        <MobileContent
           v-if="item.header == selected"
           :content="item.content"
         /> 
@@ -14,13 +17,13 @@
 </template>
 
 <script>
-import Mobile from './Mobile.vue'
+import MobileContent from './MobileContent.vue'
 
 
 export default {
-  props: ["item", 'select', 'selected'],
+  props: ["index", "item", 'select', 'selected'],
   components: {
-    Mobile,
+    MobileContent,
   },
 }
 
@@ -58,6 +61,5 @@ export default {
 .content a{
   font-weight: 200;
 }
-
 
 </style>

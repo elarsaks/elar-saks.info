@@ -19,13 +19,13 @@
       :content="content[sectionContent]"
       select="select"
     />
-    <div id="wrapper" v-if="open && windowWidth < 1023">
+    <div id="mobile" v-if="open && windowWidth < 1023" >
       <Section 
-        v-for="item in content" v-bind:key="item.header"
+        v-for="(item, index) in content" v-bind:key="index"
+        :index="index"
         :item="item"
-        :header="item.header"
         :select="select"
-        :selected="sectionContent"
+        :selected="this.sectionContent"
       />
     </div>
   </div>
@@ -91,7 +91,7 @@ export default {
   },
   created() {
     setInterval(this.changeColor, 100);
-    this.sectionContent = 'about'
+    this.sectionContent = this.windowWidth < 1023 ? '' : 'about'
   },
   mounted() { 
     this.$nextTick(() => {
@@ -108,6 +108,7 @@ body {
   min-height: 100vh;
   font-family: Roboto;
   padding-bottom: 10vh;
+  overflow: hidden;
 }
 
 #app {
@@ -116,7 +117,7 @@ body {
   font-family: Roboto;
 }
 
-#wrapper {
+#mobile{
   border-radius: 2vh;
   background-color: rgb(0,0,0,0.2);
   margin-left: auto;
@@ -134,16 +135,15 @@ body {
 }
 
 @media (min-width:600px){
-  #wrapper {
+  #mobile {
     width: 70vw;
   }
 }
 
 @media (min-width:1023px){
-  #wrapper {
+  #mobile {
     display: none;
   }
 }
-
 
 </style>
