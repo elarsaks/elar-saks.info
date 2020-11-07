@@ -28,6 +28,10 @@
         @change-content="openCloseContent"
       />
     </div>
+    <div id="copy-right">
+      <h4> Copyright &#169; 2020 </h4>
+      <h1> ELAR SAKS </h1>
+    </div>
   </div>
 </template>
 
@@ -119,7 +123,7 @@ body {
 #app {
   min-height: 100vh;
   font-family: Roboto;
-  padding-bottom: 5vh;
+  margin-bottom: 0;
 }
 
 #mobile{
@@ -127,6 +131,7 @@ body {
   background-color: rgb(0,0,0,0.2);
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 5vh;
   width: 95vw;
 }
 
@@ -139,24 +144,55 @@ body {
   border-radius: 0vh 0vh 2vh 2vh;
 }
 
+@media (max-width:1023px){
+
+  #copy-right {
+    color: white;
+    float: right;
+    font-weight: 200;
+    text-align: center;
+    font-family: Roboto;
+    margin-right: 3vw;
+    padding-top: 2vh;
+  }
+
+  #copy-right h4 {
+    font-size: 4.6vw;
+    font-weight: 200;
+    padding: 0;
+    margin: 0;
+  }
+
+  #copy-right h1 {
+    font-size: 7vw;
+    padding: 0;
+    margin: 0;
+    font-weight: 200;
+  }
+
+}
+
 @media (min-width:600px){
+
   #mobile {
     width: 70vw;
     overflow-y: scroll;
+  }
+
+  #copy-right {
+    margin-right: 15vw;
   }
 }
 
 @media (min-width:1023px){
 
-  #app {
-    overflow: hidden;
-  }
-
   #mobile {
     display: none;
   }
 
-
+  #copy-right {
+    display: none;
+  }
 }
 
 </style>

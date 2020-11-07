@@ -46,7 +46,6 @@
 <style scoped>
 .content {
   padding-bottom: 3vh;
-  padding-left: 2vw;
   overflow-y: scroll;
 }
 
@@ -95,13 +94,12 @@ p {
 }
 
 .date {
-  text-decoration: underline;
   padding-bottom: 1vh;
 }
 
 .child {
-  padding: 2vh;
-  padding-left: 4vh;
+  padding: 1vh;
+  padding-left: 2vh;
   margin: 0;
 }
 
