@@ -112,9 +112,9 @@ export default {
 
 body {
   margin: 0;
+  padding: 0;
   min-height: 100vh;
   font-family: Roboto;
-  padding-bottom: 10vh;
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -122,7 +122,8 @@ body {
 #app {
   min-height: 100vh;
   font-family: Roboto;
-  margin-bottom: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
 #mobile{
