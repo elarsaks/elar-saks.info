@@ -1,15 +1,15 @@
 <template>
   <div class="content" v-bind:class="{ about: about }">
+
     <h3 v-if="exp.facility"> {{ exp.facility }} </h3>
     <h4 v-if="exp.position"> {{ exp.position }} </h4>
     <h4 class="date" v-if="exp.date"> {{ exp.date }} </h4>
+    <p v-for="paragraph in exp.paragraphs" v-bind:key="paragraph" >{{paragraph}} </p>
 
-    <p v-for="paragraph in exp.paragraphs" v-bind:key="paragraph" >{{paragraph}}</p>
-
+    <!-- Education Specific. Consider making a separate compoent -->
     <ul v-if="exp.list && section != 'education'">
       <li v-for="item in exp.list" v-bind:key="item">{{item}}</li>
     </ul>
-
     <div class="courses" v-if="section == 'education' && exp.list">
       <h4 class="cursor" @click="showCourses = !showCourses" > Relevant Courses: </h4>
       <transition name="slide">
@@ -19,31 +19,45 @@
       </transition>
     </div>
 
+    <Project
+      v-if="section == 'projects'"
+      :project="exp"
+      :projectOpen="projectOpen"
+      @showProject="openProject"
+    />
+
   </div>
 </template>
 
 <script>
+import Project from './Project.vue'
+
   export default{
     props: ['exp', 'section'],
+    components: {
+      Project,
+    },
     data(){
       return{
         showCourses: false,
+        projectOpen: false,
+      }
+    },
+    methods:{
+      openProject(project){
+        this.projectOpen = this.projectOpen == project ? false : project
       }
     },
     computed: {
-    about: function () {
-      return this.section != 'about'
-    }
+      about: function () {
+        return this.section != 'about'
+      }
   },
-  created(){
-    console.log(this.section)
-    console.log(this.exp)
-    }
-  }
+}
 </script>
 
 
-<style scoped>
+<style>
 .content {
   padding-bottom: 3vh;
   overflow-y: scroll;

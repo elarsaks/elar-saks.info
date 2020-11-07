@@ -5,7 +5,7 @@
   >
     <h1 class="section-header" @click="$emit('change-content', this.item.header)">
       {{item.header}}
-      <img src="./../assets/down.png" />
+      <img class="section-img" src="./../assets/down.png" />
     </h1>
     <transition name="slide" >
         <MobileContent
@@ -14,6 +14,7 @@
           :section="index"
         /> 
     </transition>
+
   </div>
 </template>
 
@@ -49,7 +50,7 @@ export default {
   margin-bottom: 1vh;
 }
 
-.section img {
+.section-img {
   height: 0.9em;
   float: right;
 }

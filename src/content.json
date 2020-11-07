@@ -6,12 +6,103 @@
           "facility":"Welcome to my page!",
           "paragraphs":[
             "I started writing code in 2015, while still doing my degree in Business Administration in Helsinki Business College. I started bymodifying web page templates and I just got fascinated about design.",
-            "My interest in digital media took me into Haaga-Helia to study Business Information Technology. Although I started, lovingdesign and aesthetics, the more code I wrote, the more addicted I got to the problem-solving aspect of it. I startedHaaga-Helia, wanting to be a web designer, and ended it wanting to be a full stack developer.",
+            "My interest in digital media took me into Haaga-Helia to study Business Information Technology. Although I started, lovingdesign and aesthetics, the more code I wrote, the more addicted I got to the problem-solving aspect of it. I started Haaga-Helia, wanting to be a web designer, and ended it wanting to be a full stack developer.",
             "Now that I have my first half a year of industry experience under my belt, I would love to master my skills as a full stackdeveloper, to move towards new challenges in cloud services or in data analytics."
           ]
         }
       ]
      },
+     "projects":{
+      "header":"Projects",
+      "content":[
+        {
+          "name":"Co2pop",
+          "image": "http://storage.googleapis.com/www.elarsaks.com/img/co2pop.png",
+          "role":"Project owner",
+          "time":"10/2019 & 07/2020",
+          "technologies": "React, Redux, Node JS, Express, PostgreSQL, Docker, Linux, Google Cloud",
+          "description":[
+            "When applying for jobs in 2019, I built a fullstack JS application that fetches CO2 and population data from World Bank API, stores it into the PostgreSQL database and then displays it to the users when requested.",
+            "In 2020, I containerized the application into Docker containers and hosted on Google Compute Engine."
+          ],
+          "links": [
+            {
+              "text": "Client: ",
+              "link": "​http://35.228.98.200:8080/"
+            },
+            {
+              "text": "API: ",
+              "link": "​http://35.228.98.200:3001/"
+            },
+            {
+              "text": "Source code: ",
+              "link": "​http://github.com/elarsaks/co2pop"
+            }
+          ]
+        },
+        {
+          "name":"LauttaSaarenSiivous",
+          "image": "http://storage.googleapis.com/www.elarsaks.com/img/lauttasaarensiivous.png",
+          "role":"Software Developer",
+          "time":"10/2017 - 11/2017",
+          "technologies": "Html, CSS, JavaScript, Java (Spring boot), AWS (S3, EC2)",
+          "description":[
+            "I commited a total overkill, by hardcoding a full stack website for a client, who just needed a static page.",
+            "At first, I hosted the front end in AWS S3 bucket and backend in AWS EC2, connecting them overhttp. After realizing the unnecessary financial costs, I removed the backend."
+          ],
+          "links": [
+            {
+              "text": "Client: ",
+              "link": "http://​www.lauttasaarensiivous.fi"
+            }
+          ]
+        },
+        {
+          "name":"Murupuru",
+          "image": "http://storage.googleapis.com/www.elarsaks.com/img/murupuru.png",
+          "role":"Project owner",
+          "time":"01/2017",
+          "technologies": "Html, CSS, JavaScript, Java (Spring boot), AWS (S3, EC2)",
+          "description":[
+            "As a young and overly ambitious student, I started a company and built a website with a goal to start building and selling web pages for SME-s.",
+            "Unfortunately my skills were not even close to where they should be for a such an undertaking."
+          ],
+          "links": [
+            {
+              "text": "Client: ",
+              "link": "http://www.murupuru.com"
+            }
+          ]
+        },
+        {
+          "name":"Angular, React, Vue",
+          "image": "http://storage.googleapis.com/www.elarsaks.com/img/angular.png",
+          "role":"Project owner",
+          "time":"01/2019",
+          "technologies": "Angular, React, Vue",
+          "description":[
+            "I wrote my thesis on differences between JavaScript frameworks.",
+            "In order to gather data on their performance, I built a simple applications in each one of them.",
+            "Applications creates and adds certain amount of rows, with dummy data, according to what button is pressed.",
+            "I used the applications to measure the time it takes for each framework to perform a certain function."
+          ],
+          "links": [
+            {
+              "text": "Angular: ",
+              "link": "http://thesis-angular.s3-website.eu-north-1.amazonaws.com/"
+            },
+            {
+              "text": "React: ",
+              "link": "http://thesis-react.s3-website.eu-north-1.amazonaws.com/"
+            },
+            {
+              "text": "Vue: ",
+              "link": "http://thesis-vue.s3-website.eu-north-1.amazonaws.com/"
+            }
+          ]
+        }
+      ]
+    },
      "experience":{
       "header":"Experience",
       "content":[

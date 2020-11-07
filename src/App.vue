@@ -28,7 +28,7 @@
         @change-content="openCloseContent"
       />
     </div>
-    <div id="copy-right">
+    <div id="copy-right" v-if="open" @click="this.open = !this.open">
       <h4> Copyright &#169; 2020 </h4>
       <h1> ELAR SAKS </h1>
     </div>
@@ -76,7 +76,6 @@ export default {
       } else {
         this.sectionContent = selected
       }
-      console.log(selected, this.sectionContent)
     },
     getColor() {
       if(degree > 359){
