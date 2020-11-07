@@ -10,14 +10,14 @@
       <li v-for="item in exp.list" v-bind:key="item">{{item}}</li>
     </ul>
 
-  <div class="courses" v-if="section == 'education' && exp.list">
-    <h4 class="cursor" @click="showCourses = !showCourses" > Relevant Courses: </h4>
-    <transition name="slide">
-      <ul class="child" v-if="showCourses">
-        <li v-for="item in exp.list" :key="item" >{{item}}</li>
-      </ul>
-    </transition>
-  </div>
+    <div class="courses" v-if="section == 'education' && exp.list">
+      <h4 class="cursor" @click="showCourses = !showCourses" > Relevant Courses: </h4>
+      <transition name="slide">
+        <ul class="child" v-if="showCourses">
+          <li v-for="item in exp.list" :key="item" >{{item}}</li>
+        </ul>
+      </transition>
+    </div>
 
   </div>
 </template>
@@ -47,6 +47,7 @@
 .content {
   padding-bottom: 3vh;
   padding-left: 2vw;
+  overflow-y: scroll;
 }
 
 h3 {

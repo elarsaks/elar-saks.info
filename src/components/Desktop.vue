@@ -4,21 +4,26 @@
       {{content.header}}
       <img src="./../assets/down.png" />
     </h1>
-    <ExpElement 
-      v-for="exp in content.content" v-bind:key="exp.facility" 
-      :exp="exp"
-      :section="section"
-    />
+    <div v-if="content.content">
+      <ExpElement 
+        v-for="exp in content.content" v-bind:key="exp.facility" 
+        :exp="exp"
+        :section="section"
+      />
+    </div>
+    <Contact v-if="content.header == 'Contact'"/>
   </div>
 </template>
 
 <script>
 import ExpElement from './ExpElement.vue'
+import Contact from './Contact.vue'
 
 export default{
   props: ['content', 'open',],
     components: {
       ExpElement,
+      Contact,
     },
     data(){
       return{

@@ -12,10 +12,9 @@
       :open="open"
       v-if="windowWidth >= 1023"
       :openSlogan="openSlogan"
-      @changecontent="select"
+      @change-content="openCloseContent"
     />
     <Desktop
-      :section="this.sectionContent"
       :open="open"
       :content="content[sectionContent]"
       v-if="windowWidth >= 1023"
@@ -25,8 +24,8 @@
         v-for="(item, index) in content" v-bind:key="index"
         :index="index"
         :item="item"
-        :select="select"
-        :selected="this.sectionContent"
+        :section="sectionContent"
+        @change-content="openCloseContent"
       />
     </div>
   </div>
@@ -67,14 +66,13 @@ export default {
     onSwipeUp(){
       this.open = !this.open
     },
-    select(header) {
-      //console.log(header, this.sectionContent)
+    openCloseContent(selected){
       if (this.windowWidth < 1023){
-        this.sectionContent = this.sectionContent == header ? false : header
+        this.sectionContent = this.sectionContent == selected ? false : selected
       } else {
-        this.sectionContent = header
+        this.sectionContent = selected
       }
-      
+      console.log(selected, this.sectionContent)
     },
     getColor() {
       if(degree > 359){
@@ -115,12 +113,13 @@ body {
   font-family: Roboto;
   padding-bottom: 10vh;
   overflow: hidden;
+  overflow-y: scroll;
 }
 
 #app {
-  overflow: hidden;
   min-height: 100vh;
   font-family: Roboto;
+  padding-bottom: 5vh;
 }
 
 #mobile{
@@ -143,13 +142,21 @@ body {
 @media (min-width:600px){
   #mobile {
     width: 70vw;
+    overflow-y: scroll;
   }
 }
 
 @media (min-width:1023px){
+
+  #app {
+    overflow: hidden;
+  }
+
   #mobile {
     display: none;
   }
+
+
 }
 
 </style>

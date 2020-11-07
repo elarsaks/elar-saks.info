@@ -5,12 +5,12 @@
     </div>
 
     <div class="menu-items">
-      <h4 class="menu-item" @click="$emit('changecontent', 'about')">About</h4>
-      <h4 class="menu-item" @click="$emit('changecontent', 'projects')">Projects</h4>
-      <h4 class="menu-item" @click="$emit('changecontent', 'experience')">Experience</h4>
-      <h4 class="menu-item" @click="$emit('changecontent', 'education')">Education</h4>
-      <h4 class="menu-item" @click="$emit('changecontent', 'volunteering')">Volunteering</h4>
-      <h4 class="menu-item" @click="$emit('changecontent', 'contact')">Contact</h4>
+      <h4 class="menu-item" @click="$emit('change-content', 'about')">About</h4>
+      <h4 class="menu-item" @click="$emit('change-content', 'projects')">Projects</h4>
+      <h4 class="menu-item" @click="$emit('change-content', 'experience')">Experience</h4>
+      <h4 class="menu-item" @click="$emit('change-content', 'education')">Education</h4>
+      <h4 class="menu-item" @click="$emit('change-content', 'volunteering')">Volunteering</h4>
+      <h4 class="menu-item" @click="$emit('change-content', 'contact')">Contact</h4>
     </div>
   </div>
   
@@ -18,9 +18,9 @@
 
 <script>
   export default{
-    props: ['open', 'openSlogan', 'select'],
+    props: ['open', 'openSlogan'],
     componentDidMount() {
-      this.$emit('changecontent', 'About')
+      this.$emit('change-content', 'About')
     }
   }
 </script>

@@ -1,15 +1,15 @@
 <template>
   <div 
     class="section" 
-    :class="{ 'rounded-corners-up' : index === 'about', 'rounded-corners-down' : index === 'volunteering' }"
+    :class="{ 'rounded-corners-up' : index === 'about', 'rounded-corners-down' : index === 'contact' }"
   >
-    <h1 class="section-header" @click="select(item.header)">
+    <h1 class="section-header" @click="$emit('change-content', this.item.header)">
       {{item.header}}
       <img src="./../assets/down.png" />
     </h1>
-    <transition name="" >
+    <transition name="slide" >
         <MobileContent
-          v-if="item.header == selected"
+          v-if="item.header == section"
           :content="item.content"
           :section="index"
         /> 
@@ -22,10 +22,11 @@ import MobileContent from './MobileContent.vue'
 
 
 export default {
-  props: ["index", "item", 'select', 'selected'],
+  props: ["index", "item", 'section'],
   components: {
     MobileContent,
   },
+
 }
 
 </script>
@@ -61,6 +62,38 @@ export default {
 
 .content a{
   font-weight: 200;
+}
+
+.slide-enter-active {
+   -moz-transition-duration: 0.3s;
+   -webkit-transition-duration: 0.3s;
+   -o-transition-duration: 0.3s;
+   transition-duration: 0.3s;
+   -moz-transition-timing-function: ease-in;
+   -webkit-transition-timing-function: ease-in;
+   -o-transition-timing-function: ease-in;
+   transition-timing-function: ease-in;
+}
+
+.slide-leave-active {
+   -moz-transition-duration: 0.3s;
+   -webkit-transition-duration: 0.3s;
+   -o-transition-duration: 0.3s;
+   transition-duration: 0.3s;
+   -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+   -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+   -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.slide-enter-to, .slide-leave {
+   max-height: 100px;
+   overflow: hidden;
+}
+
+.slide-enter, .slide-leave-to {
+   overflow: hidden;
+   max-height: 0;
 }
 
 </style>
