@@ -1,11 +1,11 @@
 <template>
   <div 
-    class="section" 
+    class="mobile" 
     :class="{ 'rounded-corners-up' : index === 'about', 'rounded-corners-down' : index === 'contact' }"
   >
-    <h1 class="section-header" @click="$emit('change-content', this.item.header)">
+    <h1 class="mobile-header" @click="$emit('change-content', this.item.header)">
       {{item.header}}
-      <img class="section-img" src="./../assets/down.png" />
+      <img class="mobile-img" src="./../assets/down.png" />
     </h1>
     <transition name="slide" >
         <MobileContent
@@ -34,14 +34,14 @@ export default {
 
 <style>
 
-.section {
+.mobile {
   padding: 2vw;
   padding-right: 3vw;
   background-color: #fff;
   margin-top: 3vh;
 }
 
-.section-header {
+.mobile-header {
   padding-top: 1vh;
   border-bottom: 1.5px solid;
   font-size: 5vw;
@@ -50,7 +50,7 @@ export default {
   margin-bottom: 1vh;
 }
 
-.section-img {
+.mobile-img {
   height: 0.9em;
   float: right;
 }

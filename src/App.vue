@@ -20,7 +20,7 @@
       v-if="windowWidth >= 1023"
     />
     <div id="mobile" v-if="open && windowWidth < 1023" >
-      <Section 
+      <Mobile 
         v-for="(item, index) in content" v-bind:key="index"
         :index="index"
         :item="item"
@@ -39,7 +39,7 @@
 import content from './content.json'
 import Desktop from './components/Desktop.vue'
 import Menu from './components/Menu.vue'
-import Section from './components/Section.vue'
+import Mobile from './components/Mobile.vue'
 import Slogan from './components/Slogan.vue'
 
 let degree = 1;
@@ -51,7 +51,7 @@ export default {
   components: {
     Desktop,
     Menu,
-    Section,
+    Mobile,
     Slogan,
   },
   data() {
@@ -72,6 +72,7 @@ export default {
     },
     openCloseContent(selected){
       if (this.windowWidth < 1023){
+        console.log(selected, this.sectionContent)
         this.sectionContent = this.sectionContent == selected ? false : selected
       } else {
         this.sectionContent = selected
@@ -124,15 +125,6 @@ body {
   font-family: Roboto;
   margin: 0;
   overflow: hidden;
-}
-
-#mobile{
-  border-radius: 2vh;
-  background-color: rgb(0,0,0,0.2);
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 5vh;
-  width: 95vw;
 }
 
 .rounded-corners-up {
