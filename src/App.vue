@@ -3,7 +3,6 @@
     id="app" 
     :style="style">
     <Slogan
-      v-hammer:swipe.up="onSwipeUp"
      :sloganUp="open"
      :openSlogan="openSlogan"
      />
@@ -68,9 +67,6 @@ export default {
     }
   },
   methods: {
-    onSwipeUp(){
-      this.open = !this.open
-    },
     openCloseContent(selected){
       if (this.windowWidth < 1023){
         console.log(selected, this.sectionContent)

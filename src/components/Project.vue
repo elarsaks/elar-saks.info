@@ -38,13 +38,20 @@ export default {
   props: ['project', 'projectOpen'],
   methods: {
     openLink(adress){
-      window.open( adress )
+      console.log(adress)
+      window.open(adress, "_blank")
     },
   }
 }
 </script>
 
 <style scoped>
+
+a {
+  text-decoration: underline;
+  color: blue;
+}
+  
 h3 {
   padding: 0;
   margin: 0;
@@ -82,6 +89,7 @@ p {
   height: 30vh;
   border-radius: 2vh;
   border: 1px solid black;
+  margin-top: 5vh;
 }
 
 .time {
@@ -121,11 +129,6 @@ p {
 
 @media (min-width:1023px) {
 
-  a {
-    text-decoration: underline;
-    color: blue;
-  }
-
   .project {
     padding-bottom: 0;
     padding-top: 5vh;
@@ -136,6 +139,7 @@ p {
     height: 50vh;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 1vh;
   }
 
   .project-info {
@@ -143,6 +147,7 @@ p {
     margin-left: auto;
     margin-right: auto;
     width: 40vw;
+    text-align: left;
   }
 }
 </style>

@@ -28,15 +28,15 @@
           "links": [
             {
               "text": "Client: ",
-              "link": "​http://35.228.98.200:8080/"
+              "link": "http://35.228.98.200:8080/"
             },
             {
               "text": "API: ",
-              "link": "​http://35.228.98.200:3001/"
+              "link": "http://35.228.98.200:3001/"
             },
             {
               "text": "Source code: ",
-              "link": "​http://github.com/elarsaks/co2pop"
+              "link": "https://github.com/elarsaks/co2pop"
             }
           ]
         },
