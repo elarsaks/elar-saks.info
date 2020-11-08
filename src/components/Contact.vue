@@ -29,14 +29,26 @@
 #contact {
   text-align: left;
   font-size: 1.5vh;
-  padding-left: 2vh;
 }
 
 #contact a {
   text-decoration: none;
   color: #1a3663;
   font-size: 2vh;
-  padding-left: 3vw;
+
+}
+
+@media (min-width:1023px) {
+
+  #contact {
+    font-size: 2vh;
+      padding-left: 2vh;
+  }
+
+  #contact a {
+    font-size: 3vh;
+    padding-left: 3vw;
+  }
 }
 
 </style>
