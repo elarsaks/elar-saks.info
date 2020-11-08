@@ -4,32 +4,58 @@
       {{content.header}}
       <img src="./../assets/down.png" />
     </h1>
-    <div v-if="content.content">
+
+    <div v-if="content.content && content.header != 'Contact' && content.header != 'Projects'">
       <ExpElement 
         v-for="exp in content.content" v-bind:key="exp.facility" 
         :exp="exp"
         :section="section"
       />
     </div>
+
+    <div v-if="content.header == 'Projects'" >
+      <Project
+        v-for="project in content.content" v-bind:key="project.name" 
+        :project="project"
+        :projectOpen="projectOpen"
+        @showProject="openProject"
+      />
+    </div>
+
     <Contact v-if="content.header == 'Contact'"/>
   </div>
 </template>
 
 <script>
-import ExpElement from './ExpElement.vue'
 import Contact from './Contact.vue'
+import ExpElement from './ExpElement.vue'
+import Project from './Project.vue'
 
 export default{
   props: ['content', 'open',],
     components: {
-      ExpElement,
       Contact,
+      ExpElement,
+      Project,
+    },
+    data(){
+      return{
+        projectOpen: false,
+      }
+    },
+    methods:{
+      openProject(project){
+        this.projectOpen = this.projectOpen == project ? false : project
+      }
     },
     computed: {
-    section: function () {
-      return this.content.header.toLowerCase()
+      section: function () {
+        return this.content.header.toLowerCase()
+      }
+    },
+    created(){
+      console.log(this.content)
     }
-  }
 }
 </script>
 

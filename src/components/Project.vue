@@ -121,6 +121,11 @@ p {
 
 @media (min-width:1023px) {
 
+  a {
+    text-decoration: underline;
+    color: blue;
+  }
+
   .project {
     padding-bottom: 0;
     padding-top: 5vh;
