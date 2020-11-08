@@ -56,7 +56,6 @@ import Project from './Project.vue'
 }
 </script>
 
-
 <style>
 .content {
   padding-bottom: 3vh;
@@ -145,6 +144,10 @@ p {
 }
 
 @media (min-width:1023px){
+  .content {
+    padding-bottom: 3vh;
+    overflow-y: hidden;
+  } 
   h3 {
     font-size: 3vh;
     padding-top: 3vh;

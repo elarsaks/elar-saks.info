@@ -5,12 +5,11 @@
     </div>
 
     <div class="menu-items">
-      <h4 class="menu-item" @click="$emit('change-content', 'about')">About</h4>
-      <h4 class="menu-item" @click="$emit('change-content', 'projects')">Projects</h4>
-      <h4 class="menu-item" @click="$emit('change-content', 'experience')">Experience</h4>
-      <h4 class="menu-item" @click="$emit('change-content', 'education')">Education</h4>
-      <h4 class="menu-item" @click="$emit('change-content', 'volunteering')">Volunteering</h4>
-      <h4 class="menu-item" @click="$emit('change-content', 'contact')">Contact</h4>
+      <h4 
+        v-for="(item, index) in content" v-bind:key="index" 
+        class="menu-item" 
+        @click="$emit('change-content', index)"
+        >{{item.header}}</h4>
     </div>
   </div>
   
@@ -18,7 +17,7 @@
 
 <script>
   export default{
-    props: ['open', 'openSlogan'],
+    props: ['content', 'open', 'openSlogan'],
     componentDidMount() {
       this.$emit('change-content', 'About')
     }
@@ -60,6 +59,12 @@
   font-weight: 400;
   font-size: 6vh;
   padding-left: 10px;
+}
+
+.menu h4 {
+  font-weight: 400;
+  font-size: 3vh;
+  padding: 10px;
 }
 
 .menu-item {

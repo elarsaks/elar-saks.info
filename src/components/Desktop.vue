@@ -68,8 +68,17 @@ export default{
   transition: all 1.9s;
 }
 
+.section-header {
+  padding-top: 1vh;
+  border-bottom: 1.5px solid;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 1vh;
+  width: 98%;
+}
+
 h1 {
-  margin-left: 2vw;
+  margin-left: 2vh;
   font-size: 4vh;
   width: 95%;
   float: left;
@@ -79,6 +88,11 @@ h1 {
 img {
   height: 4vh;
   float: right;
+}
+
+@media (min-width:1023px){
+
+
 }
 
 </style>

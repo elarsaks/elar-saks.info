@@ -29,7 +29,7 @@
 #contact {
   text-align: left;
   font-size: 1.5vh;
-  padding-left: 3vw;
+  padding-left: 2vh;
 }
 
 #contact a {

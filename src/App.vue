@@ -10,8 +10,9 @@
     
     <Menu 
       :open="open"
-      v-if="windowWidth >= 1023"
       :openSlogan="openSlogan"
+      :content="content"
+      v-if="windowWidth >= 1023"
       @change-content="openCloseContent"
     />
     <Desktop
