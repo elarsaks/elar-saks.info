@@ -56,7 +56,7 @@ import Project from './Project.vue'
 }
 </script>
 
-<style>
+<style scoped>
 .content {
   padding-bottom: 3vh;
   overflow-y: scroll;

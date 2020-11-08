@@ -8,21 +8,25 @@
 
       <transition name="slide">
         <div
-          v-if="projectOpen == project.name"
+          v-if="projectOpen == project.name || windowWidth > 1023"
           class="project-info"
         >
           <h3> {{ project.name }} </h3>
           <h4> {{ project.role }} </h4>
           <h4 class="time"> {{ project.time }} </h4>
-          <h4>Technologies: </h4>
+          <h4 class="in-text">Technologies: </h4>
           <p> {{project.technologies}} </p>
 
-          <h4>Description: </h4>
+          <h4 class="in-text">Description: </h4>
           <p v-for="p in project.description" v-bind:key="p" > {{ p }} </p>
 
-          <h4>Links: </h4>
+          <h4 class="in-text">Links: </h4>
           <div v-for="link in project.links" v-bind:key="link.link">
-            <p class="links">{{ link.text }} <br> <a @click="openLink(link.link)">{{ link.link }}</a></p>
+            <p class="links">
+              {{ link.text }}
+              <br v-if="windowWith < 1024" >
+              <a @click="openLink(link.link)">{{ link.link }}</a>
+            </p>
           </div>
       </div>
       </transition>
@@ -32,6 +36,12 @@
 <script>
 export default {
   props: ['project', 'projectOpen'],
+    data() {
+    return {
+      windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth,
+    }
+  },
   methods: {
     openLink(adress){
       window.open( adress )
@@ -41,6 +51,29 @@ export default {
 </script>
 
 <style scoped>
+h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 3vh;
+}
+
+h4 {
+  padding: 0;
+  margin: 0;
+  font-size: 2vh;
+}
+
+.in-text {
+  padding: 0;
+}
+
+p {
+  padding: 0;
+  padding-bottom: 2vh;
+  font-size: 2vh;
+  margin: 0;
+}
+
 .project {
   text-align: center;
 }
@@ -90,5 +123,28 @@ export default {
 
 .slide-enter-to, .slide-leave {
    overflow: hidden;
+}
+
+@media (min-width:1023px) {
+
+  .project {
+    padding-bottom: 0;
+    padding-top: 5vh;
+    display: inline-block;
+  }
+
+  .project-img {
+    width: 40%;
+    height: 30%;
+  }
+
+  .project-info {
+    float: right;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    width: 50%;
+  }
 }
 </style>
