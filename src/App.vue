@@ -43,7 +43,7 @@ import Menu from './components/Menu.vue'
 import Mobile from './components/Mobile.vue'
 import Slogan from './components/Slogan.vue'
 
-let degree = 1;
+let degree = 180;
 let saturation = 100;
 let luminosity = 20;
 
@@ -99,7 +99,7 @@ export default {
     }
   },
   created() {
-    setInterval(this.changeColor, 100);
+    setInterval(this.changeColor, 70);
     this.sectionContent = this.windowWidth < 1023 ? '' : 'about'
   },
   mounted() { 
