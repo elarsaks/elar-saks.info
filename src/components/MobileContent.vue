@@ -1,10 +1,20 @@
 <template>
   <div class="mobile">
-    <ExpElement 
-      v-for="exp in content" v-bind:key="exp.facility" 
-      :exp="exp"
-      :section="section"
+    <div v-if="section != 'projects' && section != 'contact'">
+      <ExpElement 
+        v-for="exp in content" v-bind:key="exp.facility" 
+        :exp="exp"
+        :section="section"
+      />
+  </div>
+  <div v-if="section == 'projects'" >
+    <Project
+      v-for="project in content" v-bind:key="project.name" 
+      :project="project"
+      :projectOpen="projectOpen"
+      @showProject="openProject"
     />
+  </div>
     <Contact
       v-if="section == 'contact'"
     />
@@ -12,14 +22,27 @@
 </template>
 
 <script>
-import ExpElement from './ExpElement.vue'
 import Contact from './Contact.vue'
+import ExpElement from './ExpElement.vue'
+import Project from './Project.vue'
 
 export default{
   props: ['content', 'section'],
     components: {
-      ExpElement,
       Contact,
+      ExpElement,
+      Project,
+    },
+    data(){
+      return{
+        projectOpen: false,
+      }
+    },
+    methods:{
+      openProject(project){
+        console.log(project, this.projectOpen)
+        this.projectOpen = this.projectOpen == project ? false : project
+      }
     },
 }
 </script>

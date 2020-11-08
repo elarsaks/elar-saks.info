@@ -8,7 +8,7 @@
 
       <transition name="slide">
         <div
-          v-if="projectOpen == project.name || windowWidth > 1023"
+          v-if="projectOpen == project.name"
           class="project-info"
         >
           <h3> {{ project.name }} </h3>
@@ -36,12 +36,6 @@
 <script>
 export default {
   props: ['project', 'projectOpen'],
-    data() {
-    return {
-      windowHeight: window.innerHeight,
-      windowWidth: window.innerWidth,
-    }
-  },
   methods: {
     openLink(adress){
       window.open( adress )
@@ -54,13 +48,13 @@ export default {
 h3 {
   padding: 0;
   margin: 0;
-  font-size: 3vh;
+  font-size: 4vh;
 }
 
 h4 {
   padding: 0;
   margin: 0;
-  font-size: 2vh;
+  font-size: 3vh;
 }
 
 .in-text {
@@ -70,7 +64,7 @@ h4 {
 p {
   padding: 0;
   padding-bottom: 2vh;
-  font-size: 2vh;
+  font-size: 3vh;
   margin: 0;
 }
 
@@ -130,21 +124,20 @@ p {
   .project {
     padding-bottom: 0;
     padding-top: 5vh;
-    display: inline-block;
   }
 
   .project-img {
-    width: 40%;
-    height: 30%;
+    width: 40vw;
+    height: 50vh;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .project-info {
-    float: right;
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
-    text-align: left;
-    width: 50%;
+    width: 40vw;
   }
 }
 </style>

@@ -19,33 +19,18 @@
       </transition>
     </div>
 
-    <Project
-      v-if="section == 'projects'"
-      :project="exp"
-      :projectOpen="projectOpen"
-      @showProject="openProject"
-    />
+
 
   </div>
 </template>
 
 <script>
-import Project from './Project.vue'
 
   export default{
     props: ['exp', 'section'],
-    components: {
-      Project,
-    },
     data(){
       return{
         showCourses: false,
-        projectOpen: false,
-      }
-    },
-    methods:{
-      openProject(project){
-        this.projectOpen = this.projectOpen == project ? false : project
       }
     },
     computed: {

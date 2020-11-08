@@ -25,12 +25,6 @@ export default{
       ExpElement,
       Contact,
     },
-    data(){
-      return{
-        murupuru: "http://www.murupuru.com",
-        lauttasaarenSiivous: "http://www.lauttasaarensiivous.fi",
-      }
-    },
     computed: {
     section: function () {
       return this.content.header.toLowerCase()
