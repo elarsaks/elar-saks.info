@@ -19,7 +19,7 @@
       </tr>
       <tr>
         <td><h2>CV:</h2></td>
-        <td><a href="http://www.elar-saks.com">www.elar-saks.com</a></td>
+        <td><a href="http://www.elar-saks.info">www.elar-saks.info</a></td>
       </tr>
     </table>
   </div>
