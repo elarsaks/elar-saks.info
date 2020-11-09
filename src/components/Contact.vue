@@ -17,6 +17,10 @@
         <td><h2>LinkedIn:</h2></td>
         <td><a href="http://www.linkedin.com/in/elarsaks/">linkedin.com/in/elarsaks/</a></td>
       </tr>
+      <tr>
+        <td><h2>CV:</h2></td>
+        <td><a href="http://www.elar-saks.com">www.elar-saks.com</a></td>
+      </tr>
     </table>
   </div>
 </template>
