@@ -1,20 +1,23 @@
 <template>
   <div>
-    <div class="slogan" @click="openSlogan()" :class="[ sloganUp ? 'sloganUp' : 'sloganDown' ]" >
-      <h1 > ELAR SAKS </h1>
-      <h4 > Junior web developer </h4>
+    <div
+      class="slogan"
+      @click="openSlogan()"
+      :class="[sloganUp ? 'sloganUp' : 'sloganDown']"
+    >
+      <h1>ELAR SAKS</h1>
+      <h4>Junior web developer</h4>
     </div>
   </div>
 </template>
 
 <script>
-  export default{
-    props: ['sloganUp', 'openSlogan'],
-  }
+export default {
+  props: ["sloganUp", "openSlogan"]
+};
 </script>
 
 <style>
-
 .slogan {
   width: 98vw;
   color: #fff;
@@ -29,9 +32,10 @@
   padding-top: 45vh;
   -webkit-transition: all 2s;
   transition: all 2s;
+  cursor: pointer;
 }
 
-.slogan h1{
+.slogan h1 {
   font-size: 10vw;
   font-family: Roboto;
   font-weight: 200;
@@ -40,7 +44,7 @@
   transition: font-size 2s;
 }
 
-.slogan h4{
+.slogan h4 {
   font-size: 4.3vw;
   font-family: Roboto;
   font-weight: 200;
@@ -71,7 +75,7 @@
   transition: all 2s;
 }
 
-@media (min-width:600px){
+@media (min-width: 600px) {
   .sloganUp {
     padding-left: 12vw;
     -webkit-transition: all 2s;
@@ -79,29 +83,28 @@
   }
 }
 
-@media (min-width:1023px){
-.sloganUp {
-  margin-top: 70vh;
-  margin-left: -13vw;
-  width: 30vw;
-  min-width: 400px;
-  height: 100px;
-  transform: rotate(-90deg);
-}
+@media (min-width: 1023px) {
+  .sloganUp {
+    margin-top: 70vh;
+    margin-left: -13vw;
+    width: 30vw;
+    min-width: 400px;
+    height: 100px;
+    transform: rotate(-90deg);
+  }
 
-.sloganUp h1 {
-  font-size: 5vw;
-  -webkit-transition: all 2s;
-  transition: all 2s;
-  font-weight: 300;
-}
+  .sloganUp h1 {
+    font-size: 5vw;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    font-weight: 300;
+  }
 
-.sloganUp h4 {
-  font-weight: 200;
-  font-size: 2.15vw;
-  -webkit-transition: all 2s;
-  transition: all 2s;
-}
-
+  .sloganUp h4 {
+    font-weight: 200;
+    font-size: 2.15vw;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+  }
 }
 </style>
